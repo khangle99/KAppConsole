@@ -37,7 +37,7 @@ public class AppConsole: NSObject {
         
     }
     
-    @objc class func hide() {
+    @objc public class func hide() {
         let window = ConsoleBarViewController.statusBarWindow
         
         if let _ = window.rootViewController as? ConsoleBarViewController {
@@ -45,11 +45,11 @@ public class AppConsole: NSObject {
         }
     }
     
-    @objc class var isVisible: Bool {
+    @objc public class var isVisible: Bool {
         return !ConsoleBarViewController.statusBarWindow.isHidden
     }
     
-    @objc class func printLine(_ str: String) {
+    @objc public class func printLine(_ str: String) {
         if let vc = ConsoleBarViewController.statusBarWindow.rootViewController as? ConsoleBarViewController {
             vc.appendLog(str)
         }
