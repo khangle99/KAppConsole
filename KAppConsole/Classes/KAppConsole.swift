@@ -30,7 +30,7 @@ public class AppConsole: NSObject {
         mode: RunLoop.Mode = .common
     ) {
         let window = ConsoleBarViewController.statusBarWindow
-        var frame = application.statusBarFrame
+        let frame = application.statusBarFrame
         
         window.frame = CGRect(origin: frame.origin, size: CGSize(width: frame.size.width, height: 144))
         window.isHidden = false
@@ -40,7 +40,7 @@ public class AppConsole: NSObject {
     @objc class func hide() {
         let window = ConsoleBarViewController.statusBarWindow
         
-        if let controller = window.rootViewController as? ConsoleBarViewController {
+        if let _ = window.rootViewController as? ConsoleBarViewController {
             window.isHidden = true
         }
     }

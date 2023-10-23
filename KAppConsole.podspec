@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'KAppConsole'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of KAppConsole.'
+  s.summary          = 'A in app terminal logging view'
   s.swift_version    = '5'
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  A in app terminal logging view, useful for debugging with launch option: wait for executable to be launch.
                        DESC
 
   s.homepage         = 'https://github.com/khangle99/KAppConsole'
