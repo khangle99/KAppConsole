@@ -11,20 +11,20 @@ import QuartzCore
 
 public class AppConsole: NSObject {
 
-    @objc class func scrollUp() {
+    @objc public class func scrollUp() {
         if let vc = ConsoleBarViewController.statusBarWindow.rootViewController as? ConsoleBarViewController {
             vc.scrollTextViewUp()
         }
     }
     
-    @objc class func scrollDown() {
+    @objc public class func scrollDown() {
         if let vc = ConsoleBarViewController.statusBarWindow.rootViewController as? ConsoleBarViewController {
             vc.scrollTextViewDown()
         }
     }
     
     
-    @objc class func showInStatusBar(
+    @objc public class func showInStatusBar(
         application: UIApplication = .shared,
         runloop: RunLoop = .main,
         mode: RunLoop.Mode = .common
