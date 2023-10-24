@@ -10,6 +10,14 @@ import QuartzCore
 
 
 public class AppConsole: NSObject {
+    
+    @objc public class func enableTouch() {
+        ConsoleWindow.isTouchEable = true
+    }
+    
+    @objc public class func disableTouch() {
+        ConsoleWindow.isTouchEable = false
+    }
 
     @objc public class func scrollUp() {
         if let vc = ConsoleBarViewController.statusBarWindow.rootViewController as? ConsoleBarViewController {

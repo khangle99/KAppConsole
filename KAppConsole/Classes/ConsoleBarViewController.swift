@@ -11,12 +11,14 @@ class ConsoleBarViewController: UIViewController {
     
     private lazy var textView: UITextView = {
         let tv = UITextView()
+        tv.layer.borderWidth = 1
         tv.showsVerticalScrollIndicator = true
         tv.showsHorizontalScrollIndicator = true
         tv.text = ""
         tv.textColor = .white
         tv.isScrollEnabled = true
         tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.layer.borderColor = UIColor.red.cgColor
         return tv
     }()
     
@@ -71,6 +73,10 @@ class ConsoleBarViewController: UIViewController {
         
     }
     
+    public func updateScrollableIndicator(isScrollable: Bool) {
+        self.textView.layer.borderColor = isScrollable ? UIColor.green.cgColor : UIColor.red.cgColor
+    }
+    
     func scrollTextViewUp() {
         // Scroll up in your UITextView
         let currentContentOffset = textView.contentOffset.y
@@ -101,6 +107,7 @@ class ConsoleBarViewController: UIViewController {
     
     @objc static var statusBarWindow: UIWindow = {
         let window = ConsoleWindow()
+        window.isMultipleTouchEnabled = true
         window.backgroundColor = .clear
         window.windowLevel = .statusBar
         window.rootViewController = ConsoleBarViewController()

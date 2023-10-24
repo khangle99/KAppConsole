@@ -8,9 +8,16 @@ import UIKit
 
 
 class ConsoleWindow: UIWindow {
-
+    
+    public static var isTouchEable = false {
+        didSet {
+            if let vc = ConsoleBarViewController.statusBarWindow.rootViewController as? ConsoleBarViewController {
+                vc.updateScrollableIndicator(isScrollable: isTouchEable)
+            }
+        }
+    }
+    
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        // don't hijack touches from the main window
-        return false
+        return ConsoleWindow.isTouchEable
     }
 }
