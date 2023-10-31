@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KAppConsole'
-  s.version          = '0.1.1'
+  s.version          = '0.1.3'
   s.summary          = 'A in app terminal logging view'
   s.swift_version    = '5'
 # This description is used to generate tags and improve search results.
